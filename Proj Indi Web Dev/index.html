@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Decorators</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/favicon-16x16.png">
+    <link rel="manifest" href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/site.webmanifest">
+    <style>
+        body{
+            background-color: black;
+            color:white;
+            font-family: 'Tangerine', cursive;
+            font-size:2em;
+        }
+        .nav{
+            display:flex;
+            justify-content:space-around;
+            font-size: 1.75rem;
+            margin-top: 5%;
+            cursor: pointer;
+        }
+        .nav-item{
+            transition:2s;
+        }
+        .nav-item:hover{
+            background-color: white;
+            border-radius:40px;
+            padding:10px;
+            color:black;
+        }
+        .nav-item>a{
+            transition:2s;
+        }
+        .nav-item>a:hover{
+            background-color: white;
+            border-radius:40px;
+            padding:10px;
+            color:black;
+        }
+        #roller{
+            padding:4%;
+        }
+        .roller1{
+            border-radius:20px;
+        }
+        .grid-trending{
+            display:grid;
+            grid-template-columns: auto auto auto auto;
+        }
+        .grid-item{
+            padding:10px;
+            margin:10px;
+            background-color: white;
+            border-radius: 30px;
+        }
+        .flex-creator{
+            display:flex;
+            justify-content:space-around;
+
+        }
+        .flex-creator-item{
+            background-color: white;
+            border-radius:60px;
+        }
+        footer{
+            background-color: white;
+            color:black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .foot{
+            display:grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+        .flex-foot-item{
+            display:flex;
+            flex-direction: column;
+            padding:40px;
+            align-items:flex-start;
+            font-size: 1.5rem;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        .addtocart{
+            margin-left:7%; 
+            margin-top:50px;
+            border:2px solid black;
+            color:black;
+            text-align: center;
+            padding:5px;
+            border-radius:10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size:1.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            width:75%;
+        }
+        .toggle-item1{
+            display:none;
+        }
+        #btnmore{
+            margin-top:40px;
+            background-color: black;
+            color:white;
+            border:2px solid white;
+            padding:20px;
+            padding-inline: 60px;
+            border-radius:20px;
+            cursor:pointer;
+            font-size: 1.75rem;
+            font-weight: 600;
+            font-family: 'Tangerine', cursive;
+        }
+        .header{
+            display:flex;
+        }
+        .header-item1{
+            padding-left:45%;
+            padding-right:27%;
+            font-size: 5rem;
+        }
+        .header-item2{
+            background-color: black;
+        }
+        #axtra{
+            color:white;
+            transition: 4s;
+        }
+        .addtocart{
+            transition:2s;
+        }
+        .carousel-item>img{
+            border-radius:40px;
+        }
+        hr{
+            background-color:white;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .nav-item>a{
+            color:white;
+        }
+        .nav-item>#nav-item-id:hover,.nav-item>#nav-item-id3:hover{
+            background-color: white;
+            color:black;
+            border-radius:40px;
+            padding:10px;
+        }
+        #nav-item-id,#nav-item-id3{
+            color:white;
+            transition:4s;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="header">
+            <div class="header-item1"><a href="../Proj Indi Web Dev/index.html" id="axtra">Pg Decor</a></div>
+            <button class="header-item2" onclick="fun4()" id="head2"><img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/dark.png" alt="" height="50px" id="blackwhite"></button>
+        </div>
+        <div class="nav-box">
+            <div class="nav">
+                <!-- When Hover They Turn Whitish -->
+                <div class="nav-item"><a href="../Proj Indi Web Dev/home_decor.html" id="nav-item-id" onmouseenter="func5()" onmouseleave="func6()">Home Decor</a></div>
+                <div class="nav-item"><a href="../Proj Indi Web Dev/home_fur.html" id="nav-item-id3" onmouseenter="func7()" onmouseleave="func8()">Home Furnishing</a></div>
+                <div class="nav-item">Bathroom Decor</div>
+                <div class="nav-item">Wall Decor</div>
+                <div class="nav-item">Stores</div>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <div id="roller">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/slide6.jfif" alt="Second slide">
+                    </div>
+                  <div class="carousel-item active">
+                    <img class="d-block w-100 h-75" src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/slide5.jfif" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/roller1.webp" alt="First slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div><br><br>
+        <center><h2 style="font-size:4rem">Trending</h2></center>
+        <hr width="80%">
+        <div class="grid-trending" id="blws1">
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid1.jpg" alt="" height="170px">
+                <label for="" style="color:black">Deluxe Sofa Brown</label><br>
+                <label for="" style="color:black">Rs. 20,000</label>
+                <div class="addtocart" onmouseenter="fun5('atc1')" id="atc1" onmouseleave="fun6('atc1')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid2.jfif" alt="">
+                <label for="" style="color:black">Deluxe Sofa White</label><br>
+                <label for="" style="color:black">Rs. 30,000</label>
+                <div class="addtocart" onmouseenter="fun5('atc2')" id="atc2" onmouseleave="fun6('atc2')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid3.jfif" alt="">
+                <label for="" style="color:black">Comfortable Sofa Black</label><br>
+                <label for="" style="color:black">Rs. 35,000</label>
+                <div class="addtocart" onmouseenter="fun5('atc3')" id="atc3" onmouseleave="fun6('atc3')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid4.jpg" alt="" height="170px">
+                <label for="" style="color:black">Flower Vase White</label><br>
+                <label for="" style="color:black">Rs. 30,000</label>
+                <div class="addtocart" onmouseenter="fun5('atc4')" id="atc4" onmouseleave="fun6('atc4')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid5.jfif" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Flower Vase Special</label><br>
+                <label for="" style="color:black">Rs. 3000</label>
+                <div class="addtocart" onmouseenter="fun5('atc5')" id="atc5" onmouseleave="fun6('atc5')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid6.jpg" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Flower Vase White2</label><br>
+                <label for="" style="color:black">Rs. 2000</label>
+                <div class="addtocart" onmouseenter="fun5('atc6')" id="atc6" onmouseleave="fun6('atc6')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid7.webp" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Abstract Painting 1</label><br>
+                <label for="" style="color:black">Rs. 60000</label>
+                <div class="addtocart" onmouseenter="fun5('atc7')" id="atc7" onmouseleave="fun6('atc7')">Add To Cart</div>
+            </div>
+            <div class="grid-item">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid8.jfif" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Van Gogh Starry Night</label><br>
+                <label for="" style="color:black">Rs. 29000</label>
+                <div class="addtocart" onmouseenter="fun5('atc8')" id="atc8" onmouseleave="fun6('atc8')">Add To Cart</div>
+            </div>
+            <div class="grid-item toggle-item1">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid9.webp" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Abstract Painting 2</label><br>
+                <label for="" style="color:black">Rs. 20100</label>
+                <div class="addtocart" onmouseenter="fun5('atc9')" id="atc9" onmouseleave="fun6('atc9')">Add To Cart</div>
+            </div>
+            <div class="grid-item toggle-item1">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid10.webp" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Abstract Painting 3</label><br>
+                <label for="" style="color:black">Rs. 32000</label>
+                <div class="addtocart" onmouseenter="fun5('atc10')" id="atc10" onmouseleave="fun6('atc10')">Add To Cart</div>
+            </div>
+            <div class="grid-item toggle-item1">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid11.webp" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Alimirah Gold</label><br>
+                <label for="" style="color:black">Rs. 52000</label>
+                <div class="addtocart" onmouseenter="fun5('atc11')" id="atc11" onmouseleave="fun6('atc11')">Add To Cart</div>
+            </div>
+            <div class="grid-item toggle-item1">
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/grid12.webp" alt="" height="290px" width="230px"><br>
+                <label for="" style="color:black">Wall Attached Book Shelf</label><br>
+                <label for="" style="color:black">Rs. 2000</label>
+                <div class="addtocart" onmouseenter="fun5('atc12')" id="atc12" onmouseleave="fun6('atc12')">Add To Cart</div>
+            </div>
+        </div>
+        <center><button onclick="fun1()" id="btnmore" onmouseenter="fun2()" onmouseleave="fun3()">Press For More</button></center>
+        <br><br><br><br>
+        <center><h2 style="font-size:4rem">Our Top Decorators</h2></center>
+        <hr width="60%">
+        <div class="flex-creator" id="blws3">
+            <div>
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/crph1.webp" alt="" height="170px" width="150px" class="flex-creator-item">
+            </div>
+            <div>
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/crph2.webp" alt="" height="170px" width="150px" class="flex-creator-item">
+            </div>
+            <div>
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/crph3.jpg" alt="" height="170px" width="150px" class="flex-creator-item">
+            </div>
+            <div>
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/crph4.jpg" alt="" height="170px" width="150px" class="flex-creator-item">
+            </div>
+            <div>
+                <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/crph5.jpg" alt="" height="170px" width="150px" class="flex-creator-item">
+            </div>
+        </div>
+    </body><hr><br><br><br><br>
+    <footer>
+        <div class="foot" id="blws2">
+            <div class="flex-foot-item">
+                <div><b><a href="#">SUPPORT</a></b></div>
+                <div><a href="">Contact Us</a></div>
+                <div><a href="">Return And Refunds</a></div>
+                <div><a href="">Shipping</a></div>
+                <div><a href="">T&C</a></div>
+                <div><a href="">Privacy Policy</a></div>
+                <div><a href="">Terms Of Service</a></div>
+                <div><a href="">Refund Policy</a></div>
+            </div>
+            <div class="flex-foot-item">
+                <div><b><a href="">Quick Links</a></b></div>
+                <div><a href="">Track Order</a></div>
+                <div><a href="">About Us</a></div>
+                <div><a href="">Stores</a></div>
+                <div><a href="">Blogs</a></div>
+                <div><a href="">Gift Cards</a></div>
+            </div>
+            <div class="flex-foot-item">
+                <div><b>Links</b></div>
+                <div>
+                    <a href="https://www.instagram.com/priyanshu_g2405/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+                        <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/insta.png" alt="" height="30%" width="100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var d=document;
+        const collection = document.getElementsByClassName("toggle-item1");
+        const btn=d.getElementById('btnmore');
+        var cnt=0;
+        function fun1(){
+            if(cnt%2!=0){
+                for (let i = 0; i < collection.length; i++) {
+                    collection[i].style.display='none';
+                    btn.innerHTML='Press For More';
+                }
+            }
+            else{
+                for (let i = 0; i < collection.length; i++) {
+                    collection[i].style.display='block';
+                    btn.innerHTML='Press To Collapse';
+                }
+            }
+            cnt+=1;
+        }
+        function fun2(){
+            btn.style.color='black';
+            btn.style.backgroundColor='white';
+        }
+        function fun3(){
+            btn.style.color='white';
+            btn.style.backgroundColor='black';
+        }
+        var cnt2=0
+        var blw=d.getElementById('blackwhite');
+        var flag=1;
+        function fun4(){
+            if(cnt2%2==0){
+                d.body.style.color='black';
+                d.body.style.backgroundColor='white';
+                blw.src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/light.png";
+                d.getElementById('head2').style.backgroundColor='white';
+                d.getElementById('head2').style.borderColor='white';
+                d.getElementById('blws1').style.backgroundColor='#e0e0e0';
+                d.getElementById('blws2').style.backgroundColor='#e0e0e0';
+                d.getElementById('blws3').style.backgroundColor='white';
+                d.getElementById('axtra').style.color='black';
+                d.getElementById('nav-item-id').style.color='black';
+                d.getElementById('nav-item-id3').style.color='black';
+                flag=0;
+            }
+            else{
+                d.body.style.color='white';
+                d.body.style.backgroundColor='black';
+                blw.src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/dark.png";
+                d.getElementById('head2').style.backgroundColor='black';
+                d.getElementById('head2').style.borderColor='black';
+                d.getElementById('blws1').style.backgroundColor='black';
+                d.getElementById('blws2').style.backgroundColor='white';
+                d.getElementById('blws3').style.backgroundColor='black';
+                d.getElementById('axtra').style.color='white';
+                d.getElementById('nav-item-id').style.color='white';
+                d.getElementById('nav-item-id3').style.color='white';
+                flag=1;
+            }
+            cnt2+=1;
+        }
+        function fun5(s){
+            const collection2 = document.getElementById(s);
+            collection2.style.color='white';
+            collection2.style.backgroundColor='green';
+            collection2.style.borderColor='darkgreen';
+            
+        }
+        function fun6(s){
+            const collection2 = document.getElementById(s);
+            collection2.style.color='black';
+            collection2.style.backgroundColor='white';
+            collection2.style.borderColor='black';
+        }
+        function func5(){
+            if(flag==0)
+            d.getElementById('nav-item-id').style.color='black';
+            else
+            d.getElementById('nav-item-id').style.color='black';
+
+        }
+        function func6(){
+            if(flag==0)
+            d.getElementById('nav-item-id').style.color='black';
+            else 
+            d.getElementById('nav-item-id').style.color='white';
+
+        }
+        function func7(){
+            if(flag==0)
+            d.getElementById('nav-item-id3').style.color='black';
+            else
+            d.getElementById('nav-item-id3').style.color='black';
+        }
+        function func8(){
+            if(flag==0)
+            d.getElementById('nav-item-id3').style.color='black';
+            else 
+            d.getElementById('nav-item-id3').style.color='white';
+        }
+    </script>
+</body>
+</html>

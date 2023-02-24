@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Decor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/favicon-16x16.png">
+    <link rel="manifest" href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/site.webmanifest">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Tangerine', cursive;
+            font-size: 2rem;
+        }
+        .sample1 {
+            margin-left: 15%;
+        }
+
+        .sample2 {
+            margin-left: 15%;
+            margin-top: 10%;
+        }
+
+        .diff {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+        }
+
+        #showhide1,
+        #showhide2,
+        #showhide3,
+        #showhide4 {
+            display: none;
+        }
+        footer{
+            background-color: white;
+            color:black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .foot{
+            display:grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+        .flex-foot-item{
+            display:flex;
+            flex-direction: column;
+            padding:40px;
+            align-items:flex-start;
+            font-size: 1.5rem;
+        }
+        a{
+            color:black;
+            text-decoration: none;
+        }
+        .nav{
+            display:flex;
+            justify-content:space-around;
+            font-size: 1.75rem;
+            margin-top: 5%;
+            cursor: pointer;
+        }
+        .nav-item{
+            transition:2s;
+        }
+        .nav-item:hover{
+            background-color: white;
+            border-radius:40px;
+            padding:10px;
+            color:black;
+        }
+        .nav-item>a{
+            transition:2s;
+        }
+        .nav-item>#nav-item-id2:hover,.nav-item>#nav-item-id3:hover{
+            background-color: white;
+            color:black;
+            border-radius:40px;
+            padding:10px;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .nav-item>a{
+            color:white;
+        }
+        #nav-item-id,#nav-item-id2,#nav-item-id3{
+            color:white;
+            transition:4s;
+        }
+        #nav-item-id{
+            font-size: 5rem;
+        }
+        #head2{
+            background-color: black;
+        }
+        img{
+            cursor: pointer;
+        }
+        hr{
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1><a href="../Proj Indi Web Dev/home_decor.html" id="nav-item-id">Home Decor</a></h1>
+        <button class="header-item2" onclick="fun4()" id="head2"><img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/dark.png" alt="" height="50px" id="blackwhite"></button>
+    </center>
+    <div class="nav-box">
+        <div class="nav">
+            <!-- When Hover They Turn Whitish -->
+            <!-- <div class="nav-item"></div> -->
+            <div class="nav-item"><a href="../Proj Indi Web Dev/index.html" id="nav-item-id2" onmouseenter="fun5()" onmouseleave="fun6()">Home</a></div>
+            <div class="nav-item"><a href="../Proj Indi Web Dev/home_fur.html" id="nav-item-id3" onmouseenter="fun7()" onmouseleave="fun8()">Home Furnishing</a></div>
+            <div class="nav-item">Bathroom Decor</div>
+            <div class="nav-item">Wall Decor</div>
+            <div class="nav-item">Stores</div>
+        </div>
+    </div>
+    <br><br>
+    <hr>
+    <div>A beautifully decorated home is proven to have a positive effect on our moods! It is important for us to
+        surround ourselves with things that we think are beautiful as well as things that represent some part of us.
+    </div><hr><br>
+    <center>
+        <div style="font-size:3rem">Our Latest Collections</div>
+    </center><br>
+    <div class="sample1">
+        <img src="../Proj Indi Web Dev/home decor/sample1.jfif" alt="" width="85%">
+        <label for="">Showpiece 1</label>
+        <div class="diff">Our One Of The Most Luxurious Theme With A Tint Of Modern Look <br> And Peacfull
+            Architechture.
+            <div id="showhide1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Labore, minus. Lorem
+                ipsum
+                dolor sit amet consectetur adipisicing <br> elit. Quos enim tempore aliquam error recusandae
+                necessitatibus
+                <br> non maiores atque molestiae culpa!
+            </div>
+            <div onclick="fun1('showhide1')">...</div>
+        </div>
+    </div>
+    <div class="sample2">
+        <img src="../Proj Indi Web Dev/home decor/sample4.jfif" alt="" width="85%">
+        <label for="">Showpiece 2</label>
+        <div class="diff">The White Heaven And The Sheer Peace.
+            <div id="showhide4">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ratione impedit deleniti
+                eius
+                sit suscipit. Vitae accusamus<br> consequatur consectetur labore possimus repellendus expedita<br>
+                ducimus alias
+                neque unde nobis nesciunt sequi quasi distinctio<br> nostrum, enim ex obcaecati? Voluptates nobis vel
+                perspiciatis <br> Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Pariatur ipsa
+                voluptatibus harum
+                laudantium repellendus. <br>Possimus cumque mollitia debitis quod aperiam? <br> Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. <br> Laudantium quod nemo sequi eligendi voluptas distinctio
+                accusamus <br> nesciunt dolorem nobis labore.</div>
+            <div onclick="fun1('showhide4')">...</div>
+        </div>
+    </div>
+    
+    <div class="sample2">
+        <img src="../Proj Indi Web Dev/home decor/sample2.jfif" alt="" width="85%">
+        <label for="">Showpiece 3</label>
+        <div class="diff">The White Marvel With The Dash Of Moredrnity. <br> The Luxoury Class Level. The Next Stop For
+            Your Netflix And Chill.
+            <div id="showhide2">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ratione impedit deleniti
+                eius
+                sit suscipit. Vitae accusamus<br> consequatur consectetur labore possimus repellendus expedita<br>
+                ducimus alias
+                neque unde nobis nesciunt sequi quasi distinctio<br> nostrum, enim ex obcaecati? Voluptates nobis vel
+                perspiciatis</div>
+            <div onclick="fun1('showhide2')">...</div>
+        </div>
+    </div>
+    <div class="sample2">
+        <img src="../Proj Indi Web Dev/home decor/sample3.jfif" alt="" width="85%">
+        <label for="">Showpiece 4</label>
+        <div class="diff">The Perfect And Relexing "Your Dream" Workspace With All <br> Equipments On Hand.
+            <div id="showhide3">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ratione impedit deleniti
+                eius
+                sit suscipit. Vitae accusamus<br> consequatur consectetur labore possimus repellendus expedita<br>
+                ducimus alias
+                neque unde nobis nesciunt sequi quasi distinctio<br> nostrum, enim ex obcaecati? Voluptates nobis vel
+                perspiciatis <br> Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Pariatur ipsa
+                voluptatibus harum
+                laudantium repellendus. <br>Possimus cumque mollitia debitis quod aperiam?</div>
+            <div onclick="fun1('showhide3')">...</div>
+        </div>
+    </div>
+    <a href="#" style="color:white" id="b1">Press For More..</a>
+    <footer>
+        <div class="foot" id="blws2">
+            <div class="flex-foot-item">
+                <div><b><a href="#">SUPPORT</a></b></div>
+                <div><a href="">Contact Us</a></div>
+                <div><a href="">Return And Refunds</a></div>
+                <div><a href="">Shipping</a></div>
+                <div><a href="">T&C</a></div>
+                <div><a href="">Privacy Policy</a></div>
+                <div><a href="">Terms Of Service</a></div>
+                <div><a href="">Refund Policy</a></div>
+            </div>
+            <div class="flex-foot-item">
+                <div><b><a href="">Quick Links</a></b></div>
+                <div><a href="">Track Order</a></div>
+                <div><a href="">About Us</a></div>
+                <div><a href="">Stores</a></div>
+                <div><a href="">Blogs</a></div>
+                <div><a href="">Gift Cards</a></div>
+            </div>
+            <div class="flex-foot-item">
+                <div><b>Links</b></div>
+                <div>
+                    <a href="https://www.instagram.com/priyanshu_g2405/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+                        <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/insta.png" alt="" height="30%" width="100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var cnt1 = 0;
+        function fun1(s) {
+            const collection = document.getElementById(s);
+            if (cnt1 % 2 != 0) {
+                collection.style.display = 'none';
+            }
+            else collection.style.display = 'block';
+            cnt1 += 1;
+        }
+        var d=document;
+        var cnt2=0
+        var blw=d.getElementById('blackwhite');
+        var flag=1;
+        function fun4(){
+            if(cnt2%2==0){
+                d.body.style.color='black';
+                d.body.style.backgroundColor='white';
+                blw.src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/light.png";
+                d.getElementById('head2').style.backgroundColor='white';
+                d.getElementById('blws2').style.backgroundColor='#e0e0e0';
+                d.getElementById('nav-item-id').style.color='black';
+                d.getElementById('nav-item-id2').style.color='black';
+                d.getElementById('nav-item-id3').style.color='black';
+                d.getElementById('b1').style.color='black';
+                flag=0;
+            }
+            else{
+                d.body.style.color='white';
+                d.body.style.backgroundColor='black';
+                blw.src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/dark.png";
+                d.getElementById('head2').style.backgroundColor='black';
+                d.getElementById('blws2').style.backgroundColor='white';
+                d.getElementById('nav-item-id').style.color='white';
+                d.getElementById('nav-item-id2').style.color='white';
+                d.getElementById('nav-item-id3').style.color='white';
+                d.getElementById('b1').style.color='white';
+                flag=1;
+            }
+            cnt2+=1;
+        }
+        function fun5(){
+            if(flag==0)
+            d.getElementById('nav-item-id2').style.color='black';
+            else
+            d.getElementById('nav-item-id2').style.color='black';
+
+        }
+        function fun6(){
+            if(flag==0)
+            d.getElementById('nav-item-id2').style.color='black';
+            else 
+            d.getElementById('nav-item-id2').style.color='white';
+
+        }
+        function fun7(){
+            if(flag==0)
+            d.getElementById('nav-item-id3').style.color='black';
+            else
+            d.getElementById('nav-item-id3').style.color='black';
+        }
+        function fun8(){
+            if(flag==0)
+            d.getElementById('nav-item-id3').style.color='black';
+            else 
+            d.getElementById('nav-item-id3').style.color='white';
+        }
+    </script>
+</body>
+
+</html>

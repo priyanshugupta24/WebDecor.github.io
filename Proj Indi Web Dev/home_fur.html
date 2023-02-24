@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Furnishing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/favicon-16x16.png">
+    <link rel="manifest" href="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/site.webmanifest">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Tangerine', cursive;
+            font-size: 2rem;
+        }
+        .nav{
+            display:flex;
+            justify-content:space-around;
+            font-size: 1.75rem;
+            margin-top: 5%;
+            cursor: pointer;
+        }
+        .nav-item{
+            transition:2s;
+        }
+        .nav-item:hover{
+            background-color: white;
+            border-radius:40px;
+            padding:10px;
+            color:black;
+        }
+        .nav-item>a{
+            transition:2s;
+        }
+        .nav-item>#nav-item-id2:hover,.nav-item>#nav-item-id3:hover{
+            background-color: white;
+            color:black;
+            border-radius:40px;
+            padding:10px;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .nav-item>a{
+            color:white;
+        }
+        #nav-item-id,#nav-item-id2,#nav-item-id3{
+            color:white;
+            transition:4s;
+        }
+        #nav-item-id{
+            font-size:5rem;
+        }
+        #head2{
+            background-color: black;
+        }
+        footer{
+            background-color: white;
+            color:black;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 10%;    
+        }
+        .foot{
+            display:grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+        .flex-foot-item{
+            display:flex;
+            flex-direction: column;
+            padding:40px;
+            align-items:flex-start;
+            font-size: 1.5rem;
+        }
+        a{
+            color:black;
+            text-decoration: none;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns: auto auto auto;
+            margin-top:2%;
+        }
+        .grid-item{
+            padding:20px;
+            background-color: white;
+            border-radius:20px; 
+            margin-bottom: 20px;
+            margin-right:20px;
+        }
+        .grid-item>img{
+            border-radius:20px; 
+        }
+        .diff{
+            color:black;
+        }
+        .addtocart{
+            transition:2s;
+        }
+        .addtocart{
+            margin-left:7%; 
+            margin-top:50px;
+            border:2px solid black;
+            color:black;
+            text-align: center;
+            padding:5px;
+            border-radius:10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size:1.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            width:75%;
+        }
+        hr{
+            background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1><a href="../Proj Indi Web Dev/home_fur.html" id="nav-item-id">Home Furnishing</a></h1>
+        <button class="header-item2" onclick="fun4()" id="head2"><img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/dark.png" alt="" height="50px" id="blackwhite"></button>
+    </center>
+    <div class="nav-box">
+        <div class="nav">
+            <!-- When Hover They Turn Whitish -->
+            <!-- <div class="nav-item"></div> -->
+            <div class="nav-item"><a href="../Proj Indi Web Dev/index.html" id="nav-item-id2" onmouseenter="fun5()" onmouseleave="fun6()">Home</a></div>
+            <div class="nav-item"><a href="../Proj Indi Web Dev/home_decor.html" id="nav-item-id3" onmouseenter="fun7()" onmouseleave="fun8()">Home Decor</a></div>
+            <div class="nav-item">Bathroom Decor</div>
+            <div class="nav-item">Wall Decor</div>
+            <div class="nav-item">Stores</div>
+        </div>
+    </div><br><br><br>
+    <hr>
+    <h3>We Don't Sell Products But Sell A LifeStyle..</h3>
+    <pre style="color:white" id="b1">               ~PG Decor</pre>
+    <hr><br><br>
+    <center><div style="font-size:3rem">Products</div></center>
+    <div class="grid">
+        <div class="grid-item">
+            <img src="../Proj Indi Web Dev/home fur/grid1.jfif" alt="" width="100%">
+            <div class="diff">Sofa Brown</div>
+            <div class="diff">Rs 20,000</div>
+            <div class="addtocart" onmouseenter="func5('atc1')" id="atc1" onmouseleave="func6('atc1')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid2.jfif" alt="" width="100%">
+            <div class="diff">Sofa Skyblue</div>
+            <div class="diff">Rs 30,000</div>
+            <div class="addtocart" onmouseenter="func5('atc2')" id="atc2" onmouseleave="func6('atc2')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid3.jfif" alt="" width="100%">
+            <div class="diff">Sofa Beige</div>
+            <div class="diff">Rs 22,000</div>
+            <div class="addtocart" onmouseenter="func5('atc3')" id="atc3" onmouseleave="func6('atc3')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid4.jfif" alt="" width="100%">
+            <div class="diff">Sofa Orange</div>
+            <div class="diff">Rs 25,100</div>
+            <div class="addtocart" onmouseenter="func5('atc4')" id="atc4" onmouseleave="func6('atc4')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid5.jfif" alt="" width="100%">
+            <div class="diff">Sofa White 1</div>
+            <div class="diff">Rs 20,800</div>
+            <div class="addtocart" onmouseenter="func5('atc5')" id="atc5" onmouseleave="func6('atc5')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid6.jfif" alt="" width="100%">
+            <div class="diff">Sofa Neon</div>
+            <div class="diff">Rs 21,090</div>
+            <div class="addtocart" onmouseenter="func5('atc6')" id="atc6" onmouseleave="func6('atc6')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid7.jfif" alt="" width="100%">
+            <div class="diff">Sofa Brown 2</div>
+            <div class="diff">Rs 29,000</div>
+            <div class="addtocart" onmouseenter="func5('atc7')" id="atc7" onmouseleave="func6('atc7')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid8.jfif" alt="" width="100%">
+            <div class="diff">Sofa White 2</div>
+            <div class="diff">Rs 20,000</div>
+            <div class="addtocart" onmouseenter="func5('atc8')" id="atc8" onmouseleave="func6('atc8')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid9.jfif" alt="" width="100%">
+            <div class="diff">Vase Transparent</div>
+            <div class="diff">Rs 2100</div>
+            <div class="addtocart" onmouseenter="func5('atc9')" id="atc9" onmouseleave="func6('atc9')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid10.jfif" alt="" width="100%">
+            <div class="diff">Vase White 1</div>
+            <div class="diff">Rs 2000</div>
+            <div class="addtocart" onmouseenter="func5('atc10')" id="atc10" onmouseleave="func6('atc10')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid11.jfif" alt="" width="100%">
+            <div class="diff">Vase Black</div>
+            <div class="diff">Rs 2000</div>
+            <div class="addtocart" onmouseenter="func5('atc11')" id="atc11" onmouseleave="func6('atc11')">Add To Cart</div>
+        </div>
+        <div class="grid-item"><img src="../Proj Indi Web Dev/home fur/grid12.jfif" alt="" width="100%">
+            <div class="diff">Vase White 2</div>
+            <div class="diff">Rs 2000</div>
+            <div class="addtocart" onmouseenter="func5('atc12')" id="atc12" onmouseleave="func6('atc12')">Add To Cart</div>
+        </div>
+    </div>
+    <a href="#" style="color:white" id="b2">Press For More..</a><br><br>
+    <footer>
+        <div class="foot" id="blws2">
+            <div class="flex-foot-item">
+                <div><b><a href="#">SUPPORT</a></b></div>
+                <div><a href="">Contact Us</a></div>
+                <div><a href="">Return And Refunds</a></div>
+                <div><a href="">Shipping</a></div>
+                <div><a href="">T&C</a></div>
+                <div><a href="">Privacy Policy</a></div>
+                <div><a href="">Terms Of Service</a></div>
+                <div><a href="">Refund Policy</a></div>
+            </div>
+            <div class="flex-foot-item">
+                <div><b><a href="">Quick Links</a></b></div>
+                <div><a href="">Track Order</a></div>
+                <div><a href="">About Us</a></div>
+                <div><a href="">Stores</a></div>
+                <div><a href="">Blogs</a></div>
+                <div><a href="">Gift Cards</a></div>
+            </div>
+            <div class="flex-foot-item">
+                <div><b>Links</b></div>
+                <div>
+                    <a href="https://www.instagram.com/priyanshu_g2405/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+                        <img src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/insta.png" alt="" height="30%" width="100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var cnt1 = 0;
+        function fun1(s) {
+            const collection = document.getElementById(s);
+            if (cnt1 % 2 != 0) {
+                collection.style.display = 'none';
+            }
+            else collection.style.display = 'block';
+            cnt1 += 1;
+        }
+        var d=document;
+        var cnt2=0
+        var blw=d.getElementById('blackwhite');
+        var flag=1;
+        function fun4(){
+            if(cnt2%2==0){
+                d.body.style.color='black';
+                d.body.style.backgroundColor='white';
+                blw.src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/light.png";
+                d.getElementById('head2').style.backgroundColor='white';
+                d.getElementById('blws2').style.backgroundColor='#e0e0e0';
+                d.getElementById('nav-item-id').style.color='black';
+                d.getElementById('nav-item-id2').style.color='black';
+                d.getElementById('nav-item-id3').style.color='black';
+                d.getElementById('b1').style.color='black';
+                d.getElementById('b2').style.color='black';
+                flag=0;
+            }
+            else{
+                d.body.style.color='white';
+                d.body.style.backgroundColor='black';
+                blw.src="D:/Priyanshu Laptop Backup/DSA/Proj Indi Web Dev/Photos/dark.png";
+                d.getElementById('head2').style.backgroundColor='black';
+                d.getElementById('blws2').style.backgroundColor='white';
+                d.getElementById('nav-item-id').style.color='white';
+                d.getElementById('nav-item-id2').style.color='white';
+                d.getElementById('nav-item-id3').style.color='white';
+                d.getElementById('b1').style.color='white';
+                d.getElementById('b2').style.color='white';
+                flag=1;
+            }
+            cnt2+=1;
+        }
+        function fun5(){
+            if(flag==0)
+            d.getElementById('nav-item-id2').style.color='black';
+            else
+            d.getElementById('nav-item-id2').style.color='black';
+
+        }
+        function fun6(){
+            if(flag==0)
+            d.getElementById('nav-item-id2').style.color='black';
+            else 
+            d.getElementById('nav-item-id2').style.color='white';
+
+        }
+        function fun7(){
+            if(flag==0)
+            d.getElementById('nav-item-id3').style.color='black';
+            else
+            d.getElementById('nav-item-id3').style.color='black';
+        }
+        function fun8(){
+            if(flag==0)
+            d.getElementById('nav-item-id3').style.color='black';
+            else 
+            d.getElementById('nav-item-id3').style.color='white';
+        }
+        function func5(s){
+            const collection2 = document.getElementById(s);
+            collection2.style.color='white';
+            collection2.style.backgroundColor='green';
+            collection2.style.borderColor='darkgreen';
+            
+        }
+        function func6(s){
+            const collection2 = document.getElementById(s);
+            collection2.style.color='black';
+            collection2.style.backgroundColor='white';
+            collection2.style.borderColor='black';
+        }
+    </script>
+</body>
+</html>
